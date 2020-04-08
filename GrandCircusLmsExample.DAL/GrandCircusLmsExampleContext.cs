@@ -52,58 +52,59 @@ namespace GrandCircusLmsExample.DAL
                 .WithMany(i => i.InstructorCourses)
                 .HasForeignKey(i => i.CourseId);
 
-            //Seed(modelBuilder);
+            Seed(modelBuilder);
         }
 
-        //public static void Seed(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Student>()
-        //        .HasData((
-        //        new Student()
-        //        {
-        //            Id = 1,
-        //            FirstName = "Jake",
-        //            LastName = "Collins",
-        //            DateOfBirth = new DateTime(1995, 10, 14),
-        //            GCIdentificationNumbe = "12001",
-        //            CreatedDate = DateTime.Today,
-        //            LastUpdatedDate = DateTime.Today,
-        //            DeclaredMajor = "Computer Science"
-        //        },
-        //        new Student()
-        //        {
-        //            Id = 2,
-        //            FirstName = "Austin",
-        //            LastName = "Powel",
-        //            DateOfBirth = new DateTime(1994, 6, 30),
-        //            GCIdentificationNumbe = "12002",
-        //            CreatedDate = DateTime.Today,
-        //            LastUpdatedDate = DateTime.Today,
-        //            DeclaredMajor = "Computer Science"
-        //        },
-        //        new Student()
-        //        {
-        //            Id = 3,
-        //            FirstName = "Dylan",
-        //            LastName = "Rule",
-        //            DateOfBirth = new DateTime(1998, 8, 2),
-        //            GCIdentificationNumbe = "12003",
-        //            CreatedDate = DateTime.Today,
-        //            LastUpdatedDate = DateTime.Today,
-        //            DeclaredMajor = "Computer Science"
-        //        },
-        //        new Student()
-        //        {
-        //            Id = 4,
-        //            FirstName = "Andrew",
-        //            LastName = "Waltman",
-        //            DateOfBirth = new DateTime(1997, 4, 6),
-        //            GCIdentificationNumbe = "12004",
-        //            CreatedDate = DateTime.Today,
-        //            LastUpdatedDate = DateTime.Today,
-        //            DeclaredMajor = "Computer Science"
-        //        }
-        //        ));
-        //}
+        public static void Seed(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>()
+                .HasData(( new Student[] {
+                new Student()
+                {
+                    Id = 1,
+                    FirstName = "Jake",
+                    LastName = "Collins",
+                    DateOfBirth = new DateTime(1995, 10, 14),
+                    GCIdentificationNumbe = "12001",
+                    CreatedDate = DateTime.Today,
+                    LastUpdatedDate = DateTime.Today,
+                    DeclaredMajor = "Computer Science"
+                },
+                new Student()
+                {
+                    Id = 2,
+                    FirstName = "Austin",
+                    LastName = "Powel",
+                    DateOfBirth = new DateTime(1994, 6, 30),
+                    GCIdentificationNumbe = "12002",
+                    CreatedDate = DateTime.Today,
+                    LastUpdatedDate = DateTime.Today,
+                    DeclaredMajor = "Computer Science"
+                },
+                new Student()
+                {
+                    Id = 3,
+                    FirstName = "Dylan",
+                    LastName = "Rule",
+                    DateOfBirth = new DateTime(1998, 8, 2),
+                    GCIdentificationNumbe = "12003",
+                    CreatedDate = DateTime.Today,
+                    LastUpdatedDate = DateTime.Today,
+                    DeclaredMajor = "Computer Science"
+                },
+                new Student()
+                {
+                    Id = 4,
+                    FirstName = "Andrew",
+                    LastName = "Waltman",
+                    DateOfBirth = new DateTime(1997, 4, 6),
+                    GCIdentificationNumbe = "12004",
+                    CreatedDate = DateTime.Today,
+                    LastUpdatedDate = DateTime.Today,
+                    DeclaredMajor = "Computer Science"
+                }
+                }
+                ));
+        }
     }
 }

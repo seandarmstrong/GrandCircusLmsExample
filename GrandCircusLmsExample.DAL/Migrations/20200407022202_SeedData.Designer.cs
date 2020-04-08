@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GrandCircusLmsExample.DAL.Migrations
 {
     [DbContext(typeof(GrandCircusLmsExampleContext))]
-    [Migration("20200407014450_CreateSecondAttempt")]
-    partial class CreateSecondAttempt
+    [Migration("20200407022202_SeedData")]
+    partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -159,6 +159,52 @@ namespace GrandCircusLmsExample.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateOfBirth = new DateTime(1995, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeclaredMajor = "Computer Science",
+                            FirstName = "Jake",
+                            GCIdentificationNumbe = "12001",
+                            LastName = "Collins",
+                            LastUpdatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateOfBirth = new DateTime(1994, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeclaredMajor = "Computer Science",
+                            FirstName = "Austin",
+                            GCIdentificationNumbe = "12002",
+                            LastName = "Powel",
+                            LastUpdatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateOfBirth = new DateTime(1998, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeclaredMajor = "Computer Science",
+                            FirstName = "Dylan",
+                            GCIdentificationNumbe = "12003",
+                            LastName = "Rule",
+                            LastUpdatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateOfBirth = new DateTime(1997, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeclaredMajor = "Computer Science",
+                            FirstName = "Andrew",
+                            GCIdentificationNumbe = "12004",
+                            LastName = "Waltman",
+                            LastUpdatedDate = new DateTime(2020, 4, 6, 0, 0, 0, 0, DateTimeKind.Local)
+                        });
                 });
 
             modelBuilder.Entity("GrandCircusLmsExample.DAL.Models.Course", b =>
