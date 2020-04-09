@@ -1,0 +1,67 @@
+﻿@model IEnumerable<GrandCircusLmsExample.DAL.Models.Instructor>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Instructors and their Courses</h1>
+
+<form action="InstructorCourse/Create" method="get">
+    <p>Last Name</p><input name="lastName" />
+    <p>Course</p><input name="courseName" />
+
+    <input type="submit" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GCIdentificationNumbe)
+            </th>
+            <th>
+                Courses
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GCIdentificationNumbe)
+            </td>
+            @foreach (var x in item.InstructorCourses)
+            {
+                <td>
+                    @x.Course.Name
+                </td>
+            }
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -4,14 +4,16 @@ using GrandCircusLmsExample.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GrandCircusLmsExample.DAL.Migrations
 {
     [DbContext(typeof(GrandCircusLmsExampleContext))]
-    partial class GrandCircusLmsExampleContextModelSnapshot : ModelSnapshot
+    [Migration("20200408010253_MoreSeedData")]
+    partial class MoreSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

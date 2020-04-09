@@ -105,6 +105,112 @@ namespace GrandCircusLmsExample.DAL
                 }
                 }
                 ));
+            modelBuilder.Entity<Instructor>()
+                .HasData((new Instructor[]
+                {
+                    new Instructor()
+                    {
+                        FirstName = "Sean",
+                        LastName = "Armstrong",
+                        DateOfBirth = new DateTime(1984, 11, 24),
+                        GCIdentificationNumbe = "101",
+                        OfficeNumber = "A1",
+                        Id = 1,
+                        CreatedDate = DateTime.Today,
+                        LastUpdatedDate = DateTime.Today
+                    },
+                    new Instructor()
+                    {
+                        FirstName = "Albert",
+                        LastName = "Ngoudjou",
+                        DateOfBirth = new DateTime(1986, 7, 4),
+                        GCIdentificationNumbe = "102",
+                        OfficeNumber = "C3",
+                        Id = 2,
+                        CreatedDate = DateTime.Today,
+                        LastUpdatedDate = DateTime.Today
+                    },
+                    new Instructor()
+                    {
+                        FirstName = "Tommy",
+                        LastName = "Waalkes",
+                        DateOfBirth = new DateTime(1991, 4, 16),
+                        GCIdentificationNumbe = "102",
+                        OfficeNumber = "AA5",
+                        Id = 3,
+                        CreatedDate = DateTime.Today,
+                        LastUpdatedDate = DateTime.Today
+                    }
+                }));
+            modelBuilder.Entity<Location>()
+                .HasData(new Location
+                {
+                    Name = "Start Garden",
+                    Address = "40 Pearl St NW",
+                    City = "Grand Rapids",
+                    State = "Michigan",
+                    Id = 1,
+                    CreatedDate = DateTime.Now,
+                    LastUpdatedDate = DateTime.Now
+                });
+            modelBuilder.Entity<Course>()
+                .HasData((new Course[]
+                {
+                    new Course
+                    {
+                        Name = "C# Back-end",
+                        Credits = 4,
+                        LocationId = 1,
+                        Id = 1,
+                        CreatedDate = DateTime.Now,
+                        LastUpdatedDate = DateTime.Now
+                    },
+                    new Course
+                    {
+                        Name = "Coolest Front End Ever",
+                        Credits = 3,
+                        LocationId = 1,
+                        Id = 2,
+                        CreatedDate = DateTime.Now,
+                        LastUpdatedDate = DateTime.Now
+                    }
+                }));
+            modelBuilder.Entity<Enrollment>()
+                .HasData((new Enrollment[]
+                {
+                    new Enrollment
+                    {
+                        StudentId = 1,
+                        CourseId = 1,
+                        Id = 1,
+                        CreatedDate = DateTime.Now,
+                        LastUpdatedDate = DateTime.Now
+                    },
+                    new Enrollment
+                    {
+                        StudentId = 2,
+                        CourseId = 1,
+                        Id = 2,
+                        CreatedDate = DateTime.Now,
+                        LastUpdatedDate = DateTime.Now
+                    },
+                    new Enrollment
+                    {
+                        StudentId = 3,
+                        CourseId = 1,
+                        Id = 3,
+                        CreatedDate = DateTime.Now,
+                        LastUpdatedDate = DateTime.Now
+                    },
+                    new Enrollment
+                    {
+                        StudentId = 4,
+                        CourseId = 1,
+                        Id = 4,
+                        CreatedDate = DateTime.Now,
+                        LastUpdatedDate = DateTime.Now
+                    }
+                }));
         }
     }
 }

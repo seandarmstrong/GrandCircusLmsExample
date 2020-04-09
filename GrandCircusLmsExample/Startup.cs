@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GrandCircusLmsExample.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,9 @@ namespace GrandCircusLmsExample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //Must add
+            services.AddDbContext<GrandCircusLmsExampleContext>();
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
