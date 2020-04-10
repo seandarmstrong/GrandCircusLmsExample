@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GrandCircusLmsExample.DAL;
 using GrandCircusLmsExample.DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrandCircusLmsExample.Controllers
 {
+    [Authorize]
     public class StudentsController : Controller
     {
         private readonly GrandCircusLmsExampleContext _context = new GrandCircusLmsExampleContext();
@@ -31,6 +33,7 @@ namespace GrandCircusLmsExample.Controllers
         }
 
         // GET: Students/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
