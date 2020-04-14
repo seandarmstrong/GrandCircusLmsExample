@@ -21,7 +21,7 @@ namespace GrandCircusLmsExample.DAL
         public virtual DbSet<Course> Courses {get; set;}
         public virtual DbSet<Enrollment> Enrollments { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
-        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Location> LocationsToFocusOn { get; set; }
         public virtual DbSet<Student> Students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
